@@ -1,11 +1,10 @@
-﻿using cleancode.Application.Command.CarCommand;
+﻿using cleancode.Application.Commands.CarCommands;
 using cleancode.Application.DTOs;
-using cleancode.Domain.Entities;
 using cleancode.shared;
-using MediatR;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 
+using MediatR;
+
+using Microsoft.AspNetCore.Mvc;
 
 namespace cleancode.Api.Controllers
 {
@@ -18,7 +17,8 @@ namespace cleancode.Api.Controllers
         {
             _mediator = mediator;
         }
-        [HttpPost}
-        public async Task<Response<CarDto> AddAsync(CreateCarCommand command,CancellationToken cancellation)=>await _mediator.send(command, CancellationToken);
+        [HttpPost]
+        public async Task<Response<CarDto>> AddAsync(CreateCarCommand command, CancellationToken cancellation)
+            => await _mediator.Send(command, cancellation);
     }
 }

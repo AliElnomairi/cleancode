@@ -1,21 +1,22 @@
 ﻿using cleancode.Application.Repositories;
 using cleancode.Infrastructure.Data.Repositories;
+
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace cleancode.Infrastructure.Data
 {
     public static class Extentions
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+        public static IServiceCollection AddDatabase(this IServiceCollection services)
         {
-            services.AddScoped<IParkingRepositories, ParkingRepositories>();
-            services.AddScoped<ICarRepositories,CarRepositories>();
-            services.AddScoped<IEmployeeRepositories, EmployeeRepositories>();  
+            services.AddScoped<IParkingRepositories, ParkingRepository>();
+            services.AddScoped<ICarRepository, CarRepository>();
+            services.AddScoped<IEmployeeRepositories, EmployeeRepository>();
+
+            services.AddDbContext<AppDbContext>();
+
+            services.AddHostedService<AppInitializer>();
+
             return services;
         }
     }

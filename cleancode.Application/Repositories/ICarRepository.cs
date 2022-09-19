@@ -2,5 +2,5 @@
 
 namespace cleancode.Application.Repositories
 {
-    public interface IEmployeeRepositories : IBaseRepository<Employee> { }
+    public interface ICarRepository : IBaseRepository<Car> { }
 }

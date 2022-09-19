@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -19,6 +20,8 @@
   <ItemGroup>
     <ProjectReference Include="..\cleancode.Application\cleancode.Application.csproj" />
     <ProjectReference Include="..\cleancode.Domain\cleancode.Domain.csproj" />
+    <ProjectReference Include="..\cleancode.Infrastructure\cleancode.Infrastructure.csproj" />
+    <ProjectReference Include="..\cleancode.shared\cleancode.shared.csproj" />
   </ItemGroup>
 
 </Project>

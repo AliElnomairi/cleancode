@@ -9,18 +9,18 @@ namespace cleancode.shared
         public static Response<T> Success<T>(T data, string message) =>
             new(data, message, false);
     }
-        public class Response<T>
+    public class Response<T>
+    {
+        public Response() { }
+        public Response(T data, string message, bool error)
         {
-            public Response() { }
-            public Response(T data, string message, bool error)
-            {
-                Data = data;
-                Message = message;
-                Error = error;
-            }
-
-            public T Data { get; set; }
-            public string Message { get; set; }
-            public bool Error { get; set; }
+            Data = data;
+            Message = message;
+            Error = error;
         }
+
+        public T Data { get; set; }
+        public string Message { get; set; }
+        public bool Error { get; set; }
+    }
 }
