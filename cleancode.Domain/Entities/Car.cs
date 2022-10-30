@@ -14,5 +14,12 @@ namespace cleancode.Domain.Entities
             Color = color;
             Year = year;
         }
+        public void update(string name,string color,string year)
+        {
+            Name=name;
+            Color = color;
+            Year=year;  
+        }
+        
     }
 }
